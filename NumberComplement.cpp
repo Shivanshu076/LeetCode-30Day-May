@@ -3,8 +3,7 @@
 // My Solution :
 
 int findComplement(int num) {
-        int x= (int)log2(num) +1;
-        x= pow(2,x)-1;
-        // cout<<x<<endl;
-        return ( num^x ) ;
-    }
+    int x= (int)log2(num) +1;
+    x= pow(2,x)-1;
+    return ( num^x ) ;
+}
