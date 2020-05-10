@@ -14,14 +14,14 @@ If the town judge exists and can be identified, return the label of the town jud
 //Solution :
 
 int findJudge(int N, vector<vector<int>>& trust) {
-        vector<vector<int>> v(N);
-        for(int i=0;i<trust.size();i++) v[trust[i][0]-1].push_back(trust[i][1]-1);
-        int x=-1;
-        for(int i=0;i<N;i++) if(!v[i].size()) x=i;
-        if(x==-1) return -1;
-        for(int i=0;i<N;i++){
-            if(i==x) continue;
-            if(find(v[i].begin(),v[i].end(),x)==v[i].end()) return -1;
-        }
-        return x+1;
+    vector<vector<int>> v(N);
+    for(int i=0;i<trust.size();i++) v[trust[i][0]-1].push_back(trust[i][1]-1);
+    int x=-1;
+    for(int i=0;i<N;i++) if(!v[i].size()) x=i;
+    if(x==-1) return -1;
+    for(int i=0;i<N;i++){
+        if(i==x) continue;
+        if(find(v[i].begin(),v[i].end(),x)==v[i].end()) return -1;
     }
+    return x+1;
+}
