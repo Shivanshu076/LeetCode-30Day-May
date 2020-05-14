@@ -33,6 +33,6 @@ private:
                 return false;
             cur = cur->children[c];
         }
-        return isPrefix ? true : cur->isEnd; // prefix is true, word is true if and only if cur.isEnd
+        return isPrefix ? true : cur->isEnd;    // prefix is true, word is true if and only if cur.isEnd
     }
 };
