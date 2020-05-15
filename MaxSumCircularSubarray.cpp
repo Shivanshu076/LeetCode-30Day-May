@@ -8,25 +8,25 @@ Also, a subarray may only include each element of the fixed buffer A at most onc
 
 // Solution (Kadane's algo) :
 
-class Solution {
-public:
-    int maxSubarraySumCircular(vector<int>& A) {
-        int sm=0;
-        for(int i=0;i<A.size();i++) sm+=A[i];
-        int mn=INT_MAX,mx=INT_MIN,a=0;
-        for(int i=0;i<A.size();i++){
-            a+=A[i];
-            mx=max(mx,a);
-            if(a<0) a=0;
-        }
-        a=0;
-        for(int i=0;i<A.size();i++){
-            a+=A[i];
-            mn=min(mn,a);
-            if(a>0) a=0;
-        }
-        cout<<mn<<" "<<mx<<endl;
-        if(sm==mn && mn<0) return mx;
-        return max(mx,sm-mn);
+
+int maxSubarraySumCircular(vector<int>& A) {
+    int sm=0;
+    for(int i=0;i<A.size();i++) sm+=A[i];
+    int mn=INT_MAX,mx=INT_MIN,a=0;
+    for(int i=0;i<A.size();i++){
+        a+=A[i];
+        mx=max(mx,a);
+        if(a<0) a=0;
     }
-};
+    a=0;
+    for(int i=0;i<A.size();i++){
+        a+=A[i];
+        mn=min(mn,a);
+        if(a>0) a=0;
+    }
+    cout<<mn<<" "<<mx<<endl;
+    if(sm==mn && mn<0) return mx;
+    return max(mx,sm-mn);
+}
+
+        int mn=INT_MAX,mx=INT_MIN,a=0;
