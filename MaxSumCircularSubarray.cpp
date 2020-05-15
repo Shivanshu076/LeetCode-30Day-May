@@ -28,5 +28,3 @@ int maxSubarraySumCircular(vector<int>& A) {
     if(sm==mn && mn<0) return mx;
     return max(mx,sm-mn);
 }
-
-        int mn=INT_MAX,mx=INT_MIN,a=0;
