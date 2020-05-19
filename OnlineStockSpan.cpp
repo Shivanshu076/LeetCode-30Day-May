@@ -9,21 +9,21 @@ For example, if the price of a stock over the next 7 days were [100, 80, 60, 70,
 // Solution :
 
 stack<int> prices, weights;
-    StockSpanner() {
-        ios_base::sync_with_stdio(0);
-        cin.tie(0);
-        cout.tie(0);
-    }
+StockSpanner() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
     
-    int next(int price) {
-         int w = 1;
-        while (!prices.empty() && prices.top() <= price) {
-            prices.pop();
-            w += weights.top();
-            weights.pop();
-        }
-
-        prices.push(price);
-        weights.push(w);
-        return w;
+int next(int price) {
+    int w = 1;
+    while (!prices.empty() && prices.top() <= price) {
+        prices.pop();
+        w += weights.top();
+        weights.pop();
     }
+
+    prices.push(price);
+    weights.push(w);
+    return w;
+}
