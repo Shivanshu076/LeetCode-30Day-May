@@ -9,20 +9,20 @@ It's guaranteed that for the given test cases there is always possible to find a
 // Solution :
 
 TreeNode* bstFromPreorder(vector<int>& preorder) {
-        int n=preorder.size(); if(!n) return NULL;
-        TreeNode* r=new TreeNode(preorder[0]);
-        for(int i=1;i<n;i++){
-            int x= preorder[i];
-            TreeNode *p=r, *c;
-            if(x>p->val) c=p->right;
-            else c=p->left;
-            while(c){
-                p=c;
-                if(x>c->val) c=c->right;
-                else c=c->left;
-            }
-            if(x>p->val) p->right= new TreeNode(x);
-            else p->left= new TreeNode(x);
+    int n=preorder.size(); if(!n) return NULL;
+    TreeNode* r=new TreeNode(preorder[0]);
+    for(int i=1;i<n;i++){
+        int x= preorder[i];
+        TreeNode *p=r, *c;
+        if(x>p->val) c=p->right;
+        else c=p->left;
+        while(c){
+            p=c;
+            if(x>c->val) c=c->right;
+            else c=c->left;
         }
-        return r;
+        if(x>p->val) p->right= new TreeNode(x);
+        else p->left= new TreeNode(x);
     }
+    return r;
+}
