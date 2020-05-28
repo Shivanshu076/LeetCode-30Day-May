@@ -3,17 +3,17 @@
 // Solution :
 
 vector<int> countBits(int num) {
-        vector<int> v(num+1);
-        v[0]=0;
-        for(int i=1;i<=num;i++){
-            // int a=0;
-            // int x=i;
-            // while(x){
-            //     if(x%2) a++;
-            //     x>>= 1;
-            // }
-            // v.push_back(a);
-            v[i]= v[i&(i-1)]+1;
-        }
-        return v;
+    vector<int> v(num+1);
+    v[0]=0;
+    for(int i=1;i<=num;i++){
+        // int a=0;
+        // int x=i;
+        // while(x){
+        //     if(x%2) a++;
+        //     x>>= 1;
+        // }
+        // v.push_back(a);
+        v[i]= v[i&(i-1)]+1;
     }
+    return v;
+}
