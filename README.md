@@ -2,4 +2,5 @@
 
 My solutions for every problem in the 30 day May challenge on leetcode !
 
-respository for leetcode may challenge
+
+Repository for leetcode may challenge
